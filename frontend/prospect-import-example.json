@@ -1,0 +1,43 @@
+{
+  "batch_id": "maviko-2026-09-18",
+  "generated_at": "2026-09-18T08:00:00-06:00",
+  "source": "chatgpt-prospecting",
+  "prospects": [
+    {
+      "business_name": "Ejemplo Clínica Sur",
+      "category": "Clínica privada",
+      "description": "Clínica con presencia activa en redes y oportunidad digital identificada.",
+      "country": "México",
+      "state": "Ciudad de México",
+      "city": "Tlalpan",
+      "address": null,
+      "source": "Directorio público",
+      "source_url": "https://example.com",
+      "opportunity": "Página web profesional y captación por WhatsApp.",
+      "quality_score": 86,
+      "contacts": [
+        {
+          "type": "whatsapp",
+          "label": "Contacto comercial",
+          "value": "+52 55 0000 0000",
+          "is_primary": true,
+          "source_url": "https://example.com"
+        }
+      ],
+      "opportunities": [
+        {
+          "service_code": "pagina_web",
+          "priority": "high",
+          "estimated_amount": 3000,
+          "notes": "Oportunidad para mejorar captación digital."
+        }
+      ],
+      "outreach": {
+        "whatsapp": "Hola, ¿qué tal? Soy Víctor de MAVIKO Digital. Vi su negocio y creo que podemos apoyarles con una página web profesional enfocada en generar confianza y facilitar el contacto por WhatsApp. ¿Te puedo compartir una propuesta breve sin compromiso?",
+        "email_subject": "Propuesta digital | MAVIKO Digital",
+        "email_body": "Hola, me gustaría compartirles una propuesta breve de MAVIKO Digital.",
+        "phone_script": "Hola, llamo de MAVIKO Digital. ¿Con quién puedo revisar una propuesta breve para mejorar su presencia digital?"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+<script setup>import { useRouter } from 'vue-router'; const router=useRouter()</script>
+<template><section class="not-found"><strong>404</strong><h1>Página no encontrada</h1><p>La ruta que intentas abrir no existe en MAVIKO CRM.</p><button class="btn btn-primary" @click="router.push('/dashboard')">Ir al dashboard</button></section></template>
+<style scoped>.not-found{min-height:65vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.not-found>strong{font-size:68px;line-height:1;color:#d9e3eb}.not-found h1{margin:14px 0 6px;color:var(--navy)}.not-found p{margin:0 0 20px;color:var(--muted);font-size:13px}</style>

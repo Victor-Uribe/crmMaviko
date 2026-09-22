@@ -10,40 +10,64 @@ use Illuminate\Validation\ValidationException;
 class AuthController extends Controller
 {
     //
-    public function login(Request $request): JsonResponse
-    {
+   public function login(
+        Request $request
+    ): JsonResponse {
+
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'string'],
-            'remember' => ['nullable', 'boolean'],
+            'email' => [
+                'required',
+                'email',
+            ],
+
+            'password' => [
+                'required',
+                'string',
+            ],
         ]);
 
-        $remember = (bool) ($credentials['remember'] ?? false);
-        unset($credentials['remember']);
-
-        if (!Auth::attempt($credentials, $remember)) {
-            throw ValidationException::withMessages([
-                'email' => ['Las credenciales no son correctas.'],
-            ]);
+        if (
+            !Auth::attempt(
+                $credentials,
+                $request->boolean('remember')
+            )
+        ) {
+            return response()->json([
+                'message' =>
+                    'Correo o contraseña incorrectos.',
+            ], 422);
         }
 
-        $request->session()->regenerate();
+        $request
+            ->session()
+            ->regenerate();
 
         return response()->json([
-            'message' => 'Sesión iniciada correctamente.',
-            'data' => $request->user(),
+            'message' =>
+                'Sesión iniciada correctamente.',
+
+            'user' =>
+                $request->user(),
         ]);
     }
 
-    public function logout(Request $request): JsonResponse
-    {
+    public function logout(
+        Request $request
+    ): JsonResponse {
+
         Auth::guard('web')->logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $request
+            ->session()
+            ->invalidate();
+
+        $request
+            ->session()
+            ->regenerateToken();
 
         return response()->json([
-            'message' => 'Sesión cerrada correctamente.',
+            'message' =>
+                'Sesión cerrada correctamente.',
         ]);
     }
 }

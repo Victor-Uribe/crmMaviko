@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\http\Requests\ProspectRequest;
+use App\Http\Requests\ProspectRequest;
 use App\Models\Prospect;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
